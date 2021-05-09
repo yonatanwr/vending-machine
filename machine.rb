@@ -61,25 +61,25 @@ class Machine
     amount = CommandLineListener.listen()
     coins_value = CoinsValue.build_coins_value(amount)
     @current_deposite = current_deposite + coins_value.value
-    p current_deposite 
     if current_deposite < @current_item.price
       balance.add_coins(coins_value)
       machine_status_print
       change = (current_deposite - current_item.price) * -1
-      puts "you deposited #{to_dollars(current_deposite)} missing #{to_dollars(change)}"
+      puts "!!!! you deposited #{to_dollars(current_deposite)} missing #{to_dollars(change)} !!!"
+      sleep(3)
     elsif current_deposite == @current_item.price  
       balance.add_coins(coins_value)
       machine_status_print
       @current_deposite = 0
       @state = STATE[:choose_item]
-      p "please take your product"
+      puts "!!!please take your product !!!"
       sleep(3)
     else  current_deposite > current_item.price
       balance.add_coins(coins_value)
       machine_status_print
       @state = STATE[:choose_item]
       change = current_deposite - current_item.price
-      p "please take your product and call support for change of #{to_dollars(change)}"
+      puts "!!!please take your product and call support for change of #{to_dollars(change)} !!!"
       @current_deposite = 0
       sleep(3)  
     end
@@ -91,6 +91,7 @@ class Machine
 
 
   def machine_status_print
+    puts ""
     puts "-------Machine Status---------------------"
     puts "Machine Total #{to_dollars(balance.value)}"    
     puts "Machine Coins #{balance.inspect}"   
