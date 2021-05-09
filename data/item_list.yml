@@ -1,0 +1,12 @@
+1:
+  name: "apple"
+  price: 1000
+2:  
+  name: "banana"
+  price: 1000
+3:
+  name: "water"  
+  price: 700
+4:
+  name: "orange"  
+  price: 1700  
