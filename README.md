@@ -71,7 +71,7 @@ please take your product and call support for change of $12.00
 
 ### TODO
 
-1. Calculate the bets option for change see [coin-change](https://github.com/nelsonic/coin-change-ruby)
+1. #### Calculate the best option for change  
 2. Input validation.
 3. Adding RSpec.
 
